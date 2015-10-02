@@ -1,0 +1,23 @@
+Frederik Roenn Stensaeth and Javier Ernesto Moran Lemus
+May 25, 2014
+
+Heap vs Merge Sort - Timing Comparison and Analysis
+
+In this timing comparison, we compare and contrast the difference between sorting a list of random integers using merge and heap sort. In order to make this comparison we gave the algorithms 13 different sized lists. The results acquired were the following: 
+
+# of Items - Heap Time (ms) - Merge Time (ms)
+50 - 0 - 0
+100 - 0 - 0
+200 - 1 - 0
+500 - 3 - 1
+1000 - 6 - 2
+10,000 - 24 - 12
+100,000 - 61 - 45
+500,000 - 387 - 168
+750,000 - 601 - 200
+1,000,000 - 817 - 225
+1,250,000 - 1144 - 264
+1,500,000 - 1337 - 314
+2,000,000 - 1908 - 482
+
+By simply examining these numbers, it becomes evident that merge sort is  significantly faster than heap sort for lists bigger than 500,000 items. However, an analysis of the time complexity of both of these algorithms would lead us to believe something completely different. After analyzing both of these algorithms, they both seem to be O(n * log(n)) algorithms. When doubling the input size, both algorithms increase their execution time by a factor by a little more than two. This means that the relationship is not 'n'. As the increase is time does not s, the relationships cannot be n^2 either. This leads us to believe that relationship is of the type n * log(n) - because log(n) is always smaller than n, meaning that n * log(n) is between n and n^2. The fact that they are algorithms of the same order does not mean that they will take the same time to execute, it simply means that they will behave in the same way. By examining the table we can see that Heap Sort takes a longer time. This might be due to the fact that Heap Sort's constants are larger than Merge Sort's constants. To time Heap Sort, timing began once numbers were being given to the heap. We started timing the algorithm at this point because the algorithm performs sorting through the method bubbleUp at this point in time. Creating the initial heap and maintaining its order is probably one of the main reasons why Heap Sort takes a longer time than Merge Sort to sort a list of equal size. 
